@@ -62,5 +62,5 @@ print(full_array.dtype)
 
 imageio.imwrite('barcode_imageio.jpg', full_array)
 
-while cv2.waitKey(1) != 27:
-    cv2.imshow('frameWindow', full_array)
+cv2.imshow('frameWindow', full_array)
+cv2.waitKey(0)
