@@ -27,7 +27,7 @@ center = (width/2, height/2)
 
 degree, da = 0, 5
 wait_time = 20 # milli-second
-while cv2.waitKey(wait_time) != 27:  
+while cv2.waitKey(wait_time) != 27:  # speed <= degree / wait_time 
     # using cv2.getRotationMatrix2D() to get the rotation matrix
     rotate_matrix = getRotationMatrix2D(center=center, angle=degree, scale=1)  # the object rotates -45 actually
     print(image.shape, center, rotate_matrix)
