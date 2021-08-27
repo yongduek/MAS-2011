@@ -5,6 +5,17 @@ Materials for MAS-2011
 Video Files
 - production_ID_5155396.mp4: Video by Dmitry Varennikov from Pexels (https://www.pexels.com/video/time-lapse-video-of-star-gazing-on-a-starry-night-5155396/)
 
+## 0. Drawing
+1. dot
+1. line, random lines
+1. triangle
+1. polygon
+1. circle
+1. ellipse
+1. moving polygons: affine transformation & kinematics
+1. draw a robot hand of two joints
+1. draw a 2D planet system
+
 ## 1. Movie Barcode
 1. open a movie file
     1. read a frame
@@ -64,5 +75,9 @@ Video Files
     - Gradient: magnitude and direction in 2D, revisited
 1. Canny edge detector to get binary edge map
 1. Local feature detector: Gabor filter, DoG, LoG
-1. Supervised learning of feature detector
-1. Supervised learning of high-level feature (class identity)
+1. Supervised learning for feature detection (canny, sobel)
+1. Supervised learning for high-level classification (cat-dog, hand written digits)
+
+
+## Pygame
+- learning by doing
