@@ -66,3 +66,9 @@ Video Files
 1. Local feature detector: Gabor filter, DoG, LoG
 1. Supervised learning of feature detector
 1. Supervised learning of high-level feature (class identity)
+
+
+
+# Pygame Resources
+1. [game development with Pygame by kidscancode.org](https://www.youtube.com/playlist?list=PLsk-HSGFjnaH5yghzu7PcOzm9NhsW0Urw)
+1. [sprite sheet tutorial: load, parse, and use](https://youtu.be/ePiMYe7JpJo)
