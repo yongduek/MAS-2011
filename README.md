@@ -86,3 +86,8 @@ Video Files
 ### Pygame Resources
 1. [game development with Pygame by kidscancode.org](https://www.youtube.com/playlist?list=PLsk-HSGFjnaH5yghzu7PcOzm9NhsW0Urw)
 1. [sprite sheet tutorial: load, parse, and use](https://youtu.be/ePiMYe7JpJo)
+
+
+---
+## Reinfocement Learning
+1. RLBook by Sutton
