@@ -1,3 +1,8 @@
+# image array
+# pixel painting
+# line drawing
+# TODO: random line drawing
+
 import numpy as np
 import cv2 # opencv
 
