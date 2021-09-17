@@ -52,6 +52,7 @@ Video Files
 1. SVD as a compressor with minimum L2 reconstruction error
 
 ## 5. Pixel Operation
+- pixel_operations.ipynb
 1. bitplanes of gray scale image
 1. color rotation
     - RGB is a selection of three light spectrums
