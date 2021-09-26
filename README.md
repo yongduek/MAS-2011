@@ -10,11 +10,20 @@ Video Files
 1. line, random lines
 1. triangle
 1. polygon
-1. circle
-1. ellipse
-1. moving polygons: affine transformation & kinematics
-1. draw a robot hand of two joints
-1. draw a 2D planet system
+    - regular polygons, connecting adjacent vertices
+    - staller figure, connecting every other vertex
+    - rosette figure, connecting each vertex to every other vertex
+3. circle
+4. ellipse
+    - $((x-x0)/W)^2 + ((y-y0)/H)^2 = 1$
+5. Polar coordinate shapes
+    - $x(t) = r(t) cos(\theta(t))$
+    - $y(t) = r(t) sin(\theta(t))$
+    - $r(t) = K(1+\cos(\theta))$ : Cardioid
+    - $r(t) = K \cos(n\theta)$ : Rose curves, where $n$ specifies the number of petals in the rose.
+7. moving polygons: affine transformation & kinematics
+8. draw a robot hand of two joints
+9. draw a 2D planet system
 
 ## 1. Movie Barcode
 1. open a movie file
