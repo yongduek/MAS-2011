@@ -11,7 +11,7 @@ Video Files
 1. triangle
 1. polygon
     - regular polygons, connecting adjacent vertices
-    - staller figure, connecting every other vertex
+    - stellation (starlike) figure, connecting every other vertex
     - rosette figure, connecting each vertex to every other vertex
 3. circle
 4. ellipse
