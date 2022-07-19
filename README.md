@@ -56,6 +56,7 @@ Video Files
    - RGB is a selection of three light spectrums
    - HSV/HSL/YUV/Lab to represent color information
 3. Negation in RGB and HSV
+4. Pixel-Swap by 이주행 
 
 ## Histogram operation
 1. brightness vs contrast
@@ -63,20 +64,24 @@ Video Files
 1. gamma control
 1. linear constrast expansion
 1. nonlinear histogram equalization 
-
+1. image color swapping by histograms
+2. 
 ## Window Operation: Convolution or Correlation
-1. linear algebra revised: inner product
-1. Smoothing of 1D: moving average of an audio wave or a single column of an image
+1. linear algebra revised: inner product in 1D and 2D
+1. Smoothing of 1D: 
+    - moving average of an audio wave or a single row/column of an image
     - inner product again
     - shape change and border manipulation
-1. box blurring
-1. Gaussian smoothing/blurring
-1. Spatial gradient: Sobel or DoG
+2. box blurring
+3. Gaussian smoothing/blurring
+4. Spatial gradient: Sobel or DoG
     - Gradient: magnitude and direction in 2D, revisited
-1. Canny edge detector to get binary edge map
-1. Local feature detector: Gabor filter, DoG, LoG
-1. Supervised learning for feature detection (canny, sobel)
-1. Supervised learning for high-level classification (cat-dog, hand written digits)
+5. Canny edge detector to get binary edge map
+6. Local feature detector: Gabor filter, DoG, LoG
+    - Fractalius effect
+      - `intro_convolution.ipynb`
+7. Supervised learning for feature detection (canny, sobel)
+8. Supervised learning for high-level classification (cat-dog, hand written digits)
 
 ## Movie Barcode
 1. open a movie file
@@ -86,15 +91,21 @@ Video Files
     1. resize the final result
 1. save to an image file '.png'
 
+## Chroma-Keying / Matting
+   - `chroma_keying.ipynb`
+   - Term Project !
+
 ## Geometric Transformation
-1. linear algebra: orthogonal basis and basis change
-1. rotate an image `rotate_image.py`
-1. online rotation of an image to make a movie `rotate_image_motion.py`
-1. Affine transformation
+1. linear algebra: 
+    - orthogonal basis and basis change
+    - rotation matrix
+    - homogeneous coordinate representation
+2. rotate an image `rotate_image.py`
+3. online rotation of an image to make a movie `rotate_image_motion.py`
+4. Affine transformation
     - rotation, translation, scaling, homogeneous vector representation
     - order of transformation
     - `rotate_image_motion_diy.py`
-        1. `numpy` for vector/matrix computation
 
 ## Linear & Bilinear Interpolation
 1. linear interpolation: $f(t) = a + bt$ for $t\in[0,1]$
@@ -109,12 +120,15 @@ Video Files
 
 ## Coding, Compression and Fourier Analysis
 1. linear algebra revisited:
-   - Orthogonal basis (linear algebra) & representation of a data
+   - Orthogonal basis (linear algebra) & representation of a data in $\mathbb{R}^n$
 3. PCA: Principal Component Analysis
    - Eigen decomposition
-4. DFT & Fourier basis in complex numbers
+   - data set of random samples (from a Gaussian distribution)
 5. SVD as a compressor with minimum L2 reconstruction error
    - Singular value decomposition
+4. DFT & Fourier basis in complex numbers
+   - Discrete Fourier Transformation for 1D and 2D signal vectors.
+   - DFT as compression
 
 
 ---
