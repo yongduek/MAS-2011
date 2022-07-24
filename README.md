@@ -3,7 +3,8 @@ Materials for MAS-2011
 
 ## * Preliminaries
 1. C/C++  and/or Python will be mainly used. Students are expected to install necessary packages.
-    - Visual Studio Build Tools for `vscode` (Visual Studio Code) (https://whale-order.tistory.com/8)
+    - https://code.visualstudio.com/docs/languages/cpp 
+      - with MinGW64
     - XCode for Mac OS X for C/C++ Programming
     - Python3 with VSCode.
     - Visual Studio Community 2019 for MS Windows 10/11 - Install C/C++
@@ -11,7 +12,15 @@ Materials for MAS-2011
 2. OpenCV library will be utilized a lot!.
     - Install opencv library.
     - www.opencv.org 
-    
+
+3. Install Opencv 3.x
+   1. C/C++: 
+     - install: `cmake`, `cmake-gui`, and then download opencv source code to install.
+     - we will be installing opencv 3.4.x
+     - https://docs.opencv.org/4.x/df/d65/tutorial_table_of_content_introduction.html 
+     - Windows: https://docs.opencv.org/4.x/d3/d52/tutorial_windows_install.html 
+       - Installation in Windows may be more tricky than in Mac OS X or Linux; but the same procedure using `camke` or `cmake-gui`
+   2. Python3: `pip install opencv-python`
 ## References
 - Digital Image Processing, Rafael Gonzalez and Richard Woods.
 - Computer Vision: Algorithms and Applications, 2nd ed., Richard Szeliski, https://szeliski.org/Book/
@@ -144,3 +153,32 @@ Video Files
 ---
 ## Reinfocement Learning
 1. RLBook by Sutton
+
+
+## Install MinGW64 & OpenCV in Windows.
+* This is partly from https://code.visualstudio.com/docs/languages/cpp 
+1. MinGW64: https://www.msys2.org/ 
+   1. Go here, follow all the commands to install mingw-w64 including `gcc`, `g++` etc.
+      1. In the `MSYS2 MSIS` terminal:
+         1. `/bin/pacman -Syu` might be useful instead of `pacman -Syu`
+   2. if MSYS is installed in C drive, then you will see `c:/msys64`
+      1. run `mingw64` in the directory for c/c++ development.
+      2. this terminal will be mainly used for installations.
+   3. Add the MinGW compiler to your PATH: https://code.visualstudio.com/docs/languages/cpp
+        * Add the path to your Mingw-w64 bin folder to the Windows PATH environment variable by using the following steps:
+
+          1. In the Windows search bar, type 'settings' to open your Windows Settings.
+          2. Search for Edit environment variables for your account.
+          3. Choose the Path variable in your User variables and then select Edit.
+          4. Select New and add the Mingw-w64 destination folder path, with \mingw64\bin appended, to the system path. The exact path depends 5. on which version of Mingw-w64 you have installed and where you installed it. If you used the settings above to install Mingw-w64, then add this to the path: C:\msys64\mingw64\bin.
+          5. Select OK to save the updated PATH. You will need to reopen any console windows for the new PATH location to be available.
+          Check your MinGW install
+
+
+2. https://cmake.org/ 
+3. https://gitforwindows.org/ 
+4. open `git-bash`, a command line tool included in the `git` package.
+5. download opencv
+    ```
+    $ mkdir https://github.com/opencv/opencv.git`
+6. 
