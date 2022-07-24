@@ -2,12 +2,13 @@
 Materials for MAS-2011
 
 ## * Preliminaries
-1. C/C++ will be mainly used. Students are expected to install necessary packages.
-    - Visual Studio for MS Windows 10/11 - Install C/C++
-    - XCode for Mac OS X
-    - python will be used selectively.
+1. C/C++  and/or Python will be mainly used. Students are expected to install necessary packages.
+    - Visual Studio Build Tools for `vscode` (Visual Studio Code) (https://whale-order.tistory.com/8)
+    - XCode for Mac OS X for C/C++ Programming
+    - Python3 with VSCode.
+    - Visual Studio Community 2019 for MS Windows 10/11 - Install C/C++
   
-2. OpenCV library will be utilized.
+2. OpenCV library will be utilized a lot!.
     - Install opencv library.
     - www.opencv.org 
     
