@@ -74,7 +74,6 @@ Video Files
 1. gamma control
 1. linear constrast expansion
 1. nonlinear histogram equalization 
-1. image color swapping by histograms
 2. 
 ## Window Operation: Convolution or Correlation
 1. linear algebra revised: inner product in 1D and 2D
@@ -181,4 +180,4 @@ Video Files
 5. download opencv
     ```
     $ mkdir https://github.com/opencv/opencv.git`
-6. 
+6. install it.
