@@ -9,9 +9,9 @@ if __name__ == "__main__":
         ys = np.random.randint(0, im.shape[0], size=2)
         xs = np.random.randint(0, im.shape[1], size=2)
 #        bgr = tuple(int(a) for a in np.random.randint(0, 255, size=3))
-        bgr = tuple(map(int, np.random.randint(0, 255, size=3) ))
+        bgr = tuple( map(int, np.random.randint(0, 255, size=3)) )
         
-        cv2.line(im, (xs[0], ys[0]), (xs[1], ys[1]), bgr)
+        cv2.line(im, [xs[0], ys[0]], [xs[1], ys[1]], bgr)
         
         cv2.imshow("dispWindow", im)
         

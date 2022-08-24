@@ -31,3 +31,52 @@
 
 
 # 2. Algorithmic drawing and visualization
+## Iterated Function System (IFS)
+1. Hill's book pp. 69-73
+
+## 2.1 Sierpinski gasket
+- https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle 
+1. Algorithm:
+   1. Choose three fixed points T0, T1, T2
+   2. Choose the initial point p0 to be drawin by selecting one of the points T0, T1, T2
+   3. Repeat
+      1. Choose one of the three points at random; call it T
+      2. Construct the next point $p_k$ as the midpoint between T and $p_{k-1}$
+      3. Draw a dt at $p_k$ 
+2. code: `ifs_sierpinski_gasket.py`
+
+## 2.2 Clifford Attractors
+- source: https://examples.pyviz.org/attractors/attractors.html 
+- An attractor is a set of values to which a numerical system tends to evolve. It is called a strange attractor if the resulting pattern has a fractal structure.
+1. Algorithm: 
+$$
+x_{n +1} = \sin(a y_{n}) + c \cos(a x_{n})\\
+y_{n +1} = \sin(b x_{n}) + d \cos(b y_{n})
+$$
+2. code: `ifs_clifford_attractor.py`
+3. Notice the role of `scale` and `shift`.
+
+## 2.3 Gumowski-Mira Attractor 
+1. Algorithm
+    ```
+    def f(x):
+        return a * x + 2.0 * (1.0 - a) * x * x / (1.0 + x * x)
+
+    def gm(x, y):
+        xnew = b * y + f(x)
+        y = -x + f(xnew)       # update
+        x = xnew               # update
+        return (x, y)
+
+    (x, y) = gm(x, y)
+    ```
+2. code: `ifs_Gumowski_Mira_attractor.py`
+
+
+## 2.4 Try
+0. Finish 'Project 1: Plotting the Hailstone Sequence' in Hill's p.71.
+1. Produce a view of the attractor of your choice.
+2. Produce a video: https://github.com/vdesmond/attractors
+
+## 2.5 More?
+1. https://softologyblog.wordpress.com/ 
