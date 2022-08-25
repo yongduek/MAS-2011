@@ -80,3 +80,80 @@ $$
 
 ## 2.5 More?
 1. https://softologyblog.wordpress.com/ 
+
+
+---
+# 3. Viewport Transformation
+Graphs are drawn in their generic domain. E.g. $y = sin(x)/x$ defined for $x \in [-2\pi, 2\pi]$ will be ranged in $[-1, 1]$. After obtaining the graph pairs $\{(x_i, y_i)\}$, the coordinates are scaled and shifted to the window coorddinate system; this is called the viewport transformation.
+
+## 3.1 Procedure (drawing a graph)
+1. obtain a set of points $\{(x_i, y_i)\}$ with an appropriate x grid.
+2. define your own window rectangle in the world: left, right, bottom, top.
+    - e.g. left=$-2\pi$, right = $+2\pi$, bottom = -1.2, top = +1.2
+3. define your window rectangle in the display pixel window.
+    - e.g. $d.lrbt = [50, 550, 600, 20]$ where $y$ coordinate is reversed.
+4. compute the viewport transformation: $T: w \rightarrow d$
+$$
+    \frac{x_w - w.l}{w.r - w.l} = \frac{x_d - d.l}{d.r - d.l}
+$$
+$$
+    x_d = \frac{x_w - w.l}{w.r - w.l} \times (d.r - d.l) + d.l
+$$
+
+5. put pixels or draw lines.
+
+**DIY**: Try to draw a graph in two parallel viewport windows, which will give you two views of the same graph.
+
+---
+# 4. Parametric curves
+## 4.1 Regular polygons, ellipses, circles
+$$
+    x = r \cos\theta \\
+    y = r \sin\theta
+$$
+
+## 4.2 Polysprials (with turtle graphics)
+
+## 4.3 Polar coordinate shapes
+$$
+    p = r e^{i\theta} \in \mathbb{R}^2 \\
+$$
+$$
+    r(\theta) = f(\theta)
+$$
+
+
+# 5. DIY Line Drawing
+## 5.1 Simple line drawing
+
+## 5.2 Triangles and filled triangles
+## 5.3 The Bresenham algorithm (DIY Team Project)
+- Will be presented.
+
+# 6. Rotation and Translation
+## 6.1 Coordinate representation
+- Change of basis
+- Meaning of rotation matrix
+
+## 6.2 Linear interpolation in 1D
+- https://en.wikipedia.org/wiki/Linear_interpolation 
+- Expanding two samples to three, four or five.
+- Three ways of grid aligning 
+    1. `align_corners = T/F`  in `pytorch.nn.functinoal.interpolate()` 
+    2. align so that source pixels are not modified in the destination; the last pixels will become just copies of the last source pixel (which is also an option)
+
+# 7. 2D Affine Transformation
+- Shear, scaling in addition to rotation and translation
+- parallelis is invariant.
+
+## 7.1 Triangle transformation
+- Sequential formulation of 2D affine transformations from one triangle to another
+- Or by linear algebra
+## 7.2 Homogeneous coordinate representation
+- Matrix multiplications to obtain the sequential transformations.
+
+
+# 8. Intermission
+
+
+# 9. Pixel-based Image Processing
