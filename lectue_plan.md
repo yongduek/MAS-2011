@@ -1,5 +1,5 @@
 # 1. Intro to image/video data
-## 1.1 course logistics
+## 1.1 Course logistics
 ## 1.2. image data structure, creation, indexing, visualization
 1. install `pip install opencv-python`
 2. install `vscode` 
@@ -157,3 +157,49 @@ $$
 
 
 # 9. Pixel-based Image Processing
+- Binary images
+- Bit planes of a gray scale image
+- Color representation: RGB & HSV
+- Color negation
+- Pixel-swap: random swap; brightness sorting in column
+
+## DIY Project: Chorma-keying or Digital Matting
+
+# 10. Histogram
+- How to compute histogram in 1D, 2D, and 3D
+- Brightness & contrast control by histogram transformation
+- Gamma correction
+- Histogram equalization algorithm
+
+# 11 Convolution - Mask Operation
+- Linear algebra: dot product or inner product
+- Smoothing of 1D signal
+    - box kernel; Gaussian kernel
+- Gradient with DOG 
+- LOG and zero-crossing for edge finding
+- Convolution vs correlation
+    - Convolution with DOG, LOG for a 1D step edge signal
+- 2D Masking for image blurring
+- Spatial gradient: Sobel operator, mag & direction
+- Canny edge detector
+- Gabor filter & Fractalius effect
+- 
+# 12 Morphological Operation
+- Structuring element to choose operation window
+- Min & Max operation
+- Dilation & erosion
+- Closing & opening
+# 13. 2D Projective Transformation
+- 2D Perspective transformation and pin-hole camera effect
+- $3\times3$ Homography matrix
+- Planar transformation in 3D perspective
+
+## DIY Project: Stitching two images having a common planar view
+
+# 14. Coding, Compression, and Harmonic Analysis
+- Linear algebra revisited: orthonormal basis & change of basis
+- PCA
+- SVD
+- DFT
+
+# 15. Further Readings
