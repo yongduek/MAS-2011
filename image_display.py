@@ -5,7 +5,7 @@ import cv2
 if __name__ == "__main__":
     print(sys.argv)
     if len(sys.argv) == 1:
-        imagefile = "pixels/cow.jpg"
+        imagefile = "pixels/월인석보_세종어제훈민정음부월인석보.jpeg"
     else:
         imagefile = sys.argv[1]
     print(f"Image: {imagefile}")
