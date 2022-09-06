@@ -34,7 +34,7 @@
 ## Iterated Function System (IFS)
 1. Hill's book pp. 69-73
 
-## 2.1 Sierpinski gasket
+## 2.1 Sierpinski triangle
 - https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle 
 1. Algorithm:
    1. Choose three fixed points T0, T1, T2
@@ -54,6 +54,10 @@ x_{n +1} = \sin(a y_{n}) + c \cos(a x_{n})\\
 y_{n +1} = \sin(b x_{n}) + d \cos(b y_{n})
 $$
 2. code: `ifs_clifford_attractor.py`
+   ```
+        # init & parameters               
+        x, y, a, b, c, d = 0, 0, -1.3, -1.3, -1.8, -1.9
+    ```
 3. Notice the role of `scale` and `shift`.
 
 ## 2.3 Gumowski-Mira Attractor 
@@ -73,7 +77,7 @@ $$
 2. code: `ifs_Gumowski_Mira_attractor.py`
 
 
-## 2.4 Try
+## 2.4 DIY Project
 0. Finish 'Project 1: Plotting the Hailstone Sequence' in Hill's p.71.
 1. Produce a view of the attractor of your choice.
 2. Produce a video: https://github.com/vdesmond/attractors
@@ -103,6 +107,9 @@ $$
 5. put pixels or draw lines.
 
 **DIY**: Try to draw a graph in two parallel viewport windows, which will give you two views of the same graph.
+
+## 3.2 `numpy` array
+- https://buildmedia.readthedocs.org/media/pdf/howtothink/latest/howtothink.pdf 
 
 ---
 # 4. Parametric curves
