@@ -44,7 +44,7 @@ def drawTriangle(canvas, p0, p1, p2, color=(250, 228, 250)):
             canvas[p[1], p[0]] = color 
     return 
 
-def drawTriangleFilled(canvas, p0, p1, p2, color=(250, 228, 250)):
+def drawTriangleFilled_1(canvas, p0, p1, p2, color=(250, 228, 250)):
     xys1 = getlinePQ(p0, p1)
     xys2 = getlinePQ(p1, p2)
     xys3 = getlinePQ(p2, p0)
@@ -78,6 +78,32 @@ def drawTriangleFilled(canvas, p0, p1, p2, color=(250, 228, 250)):
         k = i 
     #
     
+    return # finished.
+
+
+def drawTriangleFilled(canvas, p0, p1, p2, color=(250, 228, 250)):
+    xys1 = getlinePQ(p0, p1)
+    xys2 = getlinePQ(p1, p2)
+    xys3 = getlinePQ(p2, p0)
+
+    xys = np.vstack( (xys1, xys2, xys3) )
+    # print(xys1.shape, xys2.shape, xys3.shape, xys.shape)
+    # print(xys)
+    
+    # sort by column 0, if x values are same, then sort by y, i.e., column 1
+    ymin = xys[:,1].min()
+    ymax = xys[:,1].max()
+    #
+    for y in range(ymin, ymax+1):
+        # 1. find x values, for the same y
+        xcoords = []
+        for xy in xys:
+            if xy[1] == y:
+                xcoords.append(xy[0]) # collect x only
+        #
+        xmin, xmax = min(xcoords), max(xcoords)
+        canvas[y, xmin:xmax+1] = color 
+    #    
     return # finished.
     
 if __name__ == "__main__":

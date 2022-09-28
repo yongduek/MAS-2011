@@ -122,7 +122,7 @@ def main(argv):
             drawPolygon(canvas, points, color)
         #
         
-        print(f"degree: {degree}")
+        # print(f"degree: {degree}")
         R = getRotation(degree)
         points = points0 @ R.T # rotate the points
         points = points * scale + shift 

@@ -144,6 +144,7 @@ $$
 - Will be presented.
 
 # 6. Rotation and Translation
+`np_geometric_transformation.py`
 ## 6.1 Coordinate representation
 - Change of basis
 - Meaning of rotation matrix
