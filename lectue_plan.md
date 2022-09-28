@@ -131,9 +131,15 @@ $$
 
 
 # 5. DIY Line Drawing
+
+`np_line_drawing.py`
+
 ## 5.1 Simple line drawing
 
 ## 5.2 Triangles and filled triangles
+
+- How to sort by row and then column
+
 ## 5.3 The Bresenham algorithm (DIY Team Project)
 - Will be presented.
 

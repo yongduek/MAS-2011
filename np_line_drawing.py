@@ -102,7 +102,7 @@ if __name__ == "__main__":
 
         
         cv2.imshow("Canvas", canvas)
-        ch = cv2.waitKey(10)
+        ch = cv2.waitKey(300)
         if ch == 27: break 
     #
     
