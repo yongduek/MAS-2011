@@ -22,7 +22,8 @@ def drawLine(cvs, x0, y0, x1, y1, color):
 def drawLinePQ(cvs, p, q, color):
     drawLine(cvs, p[0], p[1], q[0], q[1], color)
 
-def drawPolygon(cvs, pts, color, axis=False):
+def drawPolygon(cvs, pts0, color, axis=False):
+    pts = pts0.astype('int')
     for k in range(pts.shape[0] - 1):
         drawLinePQ(cvs, pts[k], pts[k+1], color)
     drawLinePQ(cvs, pts[-1], pts[0], color)
@@ -47,7 +48,7 @@ def getRegularPolygon(n):
     return np.array(pts)
 #
 
-def getRotation(deg):
+def Rotation2(deg):
     R = np.zeros((2,2))
     radian = deg2rad(deg)
     R[0,0] = np.cos(radian)
@@ -56,16 +57,44 @@ def getRotation(deg):
     R[1,1] = np.cos(radian)
     return R 
 
+def Rotation(deg):
+    R = np.eye(3)
+    radian = deg2rad(deg)
+    c, s = np.cos(radian), np.sin(radian)
+    R[0,0] = c
+    R[0,1] = -s
+    R[1,0] = s
+    R[1,1] = c
+    return R 
+
+def Translation(t): # t is a 2/3-vector
+    T = np.eye(3)
+    T[0,2] = t[0]
+    T[1,2] = t[1]
+    return T
+
+def Scaling(s):
+    S = np.eye(3)
+    S[0,0] = S[1,1] = s 
+    return S 
+
+def Shear(h):
+    H = np.eye(3)
+    H[0,1] = h 
+    return H 
+#
+
 def main(argv):
     cwidth, cheight = 1600, 1000 
     color_depth = 3
     canvas = np.zeros( (cheight, cwidth, color_depth), dtype='uint8')
 
-
     color = np.random.randint(0, 256, size=3)
     ngon = 5
     points0 = getRegularPolygon(ngon)
-    scale = 300
+    p0h = np.hstack( (points0, np.ones(shape=(points0.shape[0],1))) )
+    print(p0h)
+    scale = 200
     shift = [cwidth/2, cheight/2]
     degree = 0  # initial rotation angle
     
@@ -110,7 +139,7 @@ def main(argv):
             ngon = np.random.randint(4, 10) # ngon 
             points = getRegularPolygon(ngon)
             scale_random = np.random.uniform(100, 400)
-            R = getRotation(np.random.randint(0, 360))
+            R = Rotation(np.random.randint(0, 360))
             # R = getRotation(30)
             points = points @ R.T # rotate the points
             shift_x = np.random.randint(0, cwidth)
@@ -122,17 +151,33 @@ def main(argv):
             drawPolygon(canvas, points, color)
         #
         
+        if 0:
+            # print(f"degree: {degree}")
+            R = Rotation(degree)
+            points = points0 @ R.T # rotate the points
+            points = points * scale + shift 
+            points = points.astype('int')
+            drawPolygon(canvas, points, color, axis=True)
+
         # print(f"degree: {degree}")
-        R = getRotation(degree)
-        points = points0 @ R.T # rotate the points
-        points = points * scale + shift 
-        points = points.astype('int')
-        drawPolygon(canvas, points, color, axis=True)
+        R = Rotation(degree)
+        T = Translation(shift)
+        S = Scaling(scale) # isotropic scaling
+        
+        H = T @ R @ S
+        qT = H @ p0h.T  # rotate the points
+        qs = qT.T
+        drawPolygon(canvas, qs, color, axis=True)
+
+        T2 = Translation([scale*2, 0]) 
+        H2 = T @ R @ T2 @ Rotation(-180 + degree*2) @ S 
+        q2t = H2 @ p0h.T 
+        drawPolygon(canvas, q2t.T, (255, 255, 128), axis=True) 
 
         degree += 1
         # display
         cv2.imshow("window name", canvas)
-        if cv2.waitKey(20) == 27: break 
+        if cv2.waitKey(25) == 27: break 
         
     #
     pass 
