@@ -160,7 +160,7 @@ $$
 - Shear, scaling in addition to rotation and translation
 - parallelis is invariant.
 
-## 7.1 Triangle transformation
+## 7.1 Transformation of A Triangle 
 - Sequential formulation of 2D affine transformations from one triangle to another
 - Or by linear algebra
 ## 7.2 Homogeneous coordinate representation

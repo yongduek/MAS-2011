@@ -53,9 +53,9 @@ def drawTriangleFilled_1(canvas, p0, p1, p2, color=(250, 228, 250)):
     # print(xys1.shape, xys2.shape, xys3.shape, xys.shape)
     # print(xys)
     
-    # sort by column 0, if x values are same, then sort by y, i.e., column 1
-    xys = xys[xys[:,0].argsort()]
-    xys = xys[xys[:,1].argsort(kind='stable')] # x 좌표의 순서는 바뀌지 않음
+    # sort by column 0 (x coord), if x values are same, then sort by y, i.e., column 1
+    xys = xys[xys[:,0].argsort()]  # sort by x coord
+    xys = xys[xys[:,1].argsort(kind='stable')] # sort by y coord, but x 좌표의 순서는 바뀌지 않음
     # print(xys)
     
     k = 0
@@ -123,8 +123,8 @@ if __name__ == "__main__":
         # draw a random triangle
         xy3 = np.random.randint([0, 0], [width, height], size=(3, 2))
         color = np.random.randint(0, 256, size=3)
-        drawTriangle(canvas, xy3[0], xy3[1], xy3[2], color)
-        # drawTriangleFilled(canvas, xy3[0], xy3[1], xy3[2], color)
+        # drawTriangle(canvas, xy3[0], xy3[1], xy3[2], color)
+        drawTriangleFilled(canvas, xy3[0], xy3[1], xy3[2], color)
 
         
         cv2.imshow("Canvas", canvas)
