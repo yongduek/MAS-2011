@@ -47,6 +47,9 @@ def main():
         i += 1
 
         cv2.imshow('frameWindow', array)
+        
+        cv2.imshow('columns', columns)
+        
         if cv2.waitKey(1) == 27:  # ESC
             break
     #
