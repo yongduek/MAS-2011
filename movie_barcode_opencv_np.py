@@ -23,7 +23,7 @@ def main():
 
     print(width, height, fps, nframes, fourcc)
 
-    columns = np.zeros((height, nframes, 3), dtype='uint8')
+    canvas = np.zeros((height, nframes, 3), dtype='uint8')
     i = 0
     while video.isOpened():
         ret, frame = video.read() 
@@ -42,21 +42,21 @@ def main():
         if i < 3: 
             print(i, frame.shape, type(frame), column.shape)
 
-        columns[:,i,:] = column
+        canvas[:,i,:] = column
 
         i += 1
 
         cv2.imshow('frameWindow', array)
         
-        cv2.imshow('columns', columns)
+        cv2.imshow('canvas', canvas)
         
         if cv2.waitKey(1) == 27:  # ESC
             break
     #
     print(f'finished processing {i} frames ({nframes})')
 
-    full_array = columns 
-    print(len(columns), full_array.shape)
+    full_array = canvas 
+    print(len(canvas), full_array.shape)
 
     full_array = cv2.resize(full_array, (800,200)) # make a smaller version
     print(full_array.dtype)
