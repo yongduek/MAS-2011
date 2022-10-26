@@ -131,13 +131,20 @@ $$
 
 
 # 5. DIY Line Drawing
+
+`np_line_drawing.py`
+
 ## 5.1 Simple line drawing
 
 ## 5.2 Triangles and filled triangles
+
+- How to sort by row and then column
+
 ## 5.3 The Bresenham algorithm (DIY Team Project)
 - Will be presented.
 
 # 6. Rotation and Translation
+`np_geometric_transformation.py`
 ## 6.1 Coordinate representation
 - Change of basis
 - Meaning of rotation matrix
@@ -153,7 +160,7 @@ $$
 - Shear, scaling in addition to rotation and translation
 - parallelis is invariant.
 
-## 7.1 Triangle transformation
+## 7.1 Transformation of A Triangle 
 - Sequential formulation of 2D affine transformations from one triangle to another
 - Or by linear algebra
 ## 7.2 Homogeneous coordinate representation

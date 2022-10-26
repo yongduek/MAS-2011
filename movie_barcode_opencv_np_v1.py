@@ -23,47 +23,28 @@ def main():
 
     print(width, height, fps, nframes, fourcc)
 
-    canvas = np.zeros((height, nframes, 3), dtype='uint8')
+    columns = np.zeros((height, nframes//3, 3), dtype='uint8')
     i = 0
     while video.isOpened():
         ret, frame = video.read() 
         if ret == False:
             break
-
         array = frame # just rename, nothing
 
-        # Collapse down to a column.
-        # column = array.mean(axis=1)  # (height, 3)
-        # Convert to bytes, as the `mean` turned our array into floats.
-        # column = column.clip(0, 255).astype('uint8')
-
-        column = array[:, array.shape[1]//2]
-
-        if i < 3: 
-            print(i, frame.shape, type(frame), column.shape)
-
-        canvas[:,i,:] = column
-
-        i += 1
+        # 1. block shift to the left
+        columns[:,:-1,:] = columns[:,1:,:]
+        
+        # 2. put the new column at the last of the column
+        columns[:,-1,:] = array[:, array.shape[1]//2, :]
 
         cv2.imshow('frameWindow', array)
-        
-        cv2.imshow('canvas', canvas)
+        cv2.imshow('columns', columns)
         
         if cv2.waitKey(1) == 27:  # ESC
             break
     #
     print(f'finished processing {i} frames ({nframes})')
 
-    full_array = canvas 
-    print(len(canvas), full_array.shape)
-
-    full_array = cv2.resize(full_array, (800,200)) # make a smaller version
-    print(full_array.dtype)
-
-    imageio.imwrite('barcode_cv2_numpy.jpg', full_array)
-
-    cv2.imshow('frameWindow', full_array)
     cv2.waitKey(0)
 
 if __name__ == "__main__":
