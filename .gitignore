@@ -129,3 +129,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 canvas.png
+swirling.mp4
+wave_images.mp4
