@@ -223,4 +223,8 @@ $$
 - SVD
 - DFT
 
+# 15. Camera Calibration & Viewing Geometry
+- Camera Simulation with Python: https://github.com/kaustubh-sadekar/VirtualCam
+- Camera calibration theory: https://docs.opencv.org/4.6.0/d9/d0c/group__calib3d.html 
+
 # 15. Further Readings
