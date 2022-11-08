@@ -176,14 +176,17 @@ $$
 - Color representation: RGB & HSV
 - Color negation
 - Pixel-swap: random swap; brightness sorting in column
+- See `pixel_operations.ipynb`
 
 ## DIY Project: Chorma-keying or Digital Matting
+    - `chroma_keying.ipynb`
 
 # 10. Histogram
 - How to compute histogram in 1D, 2D, and 3D
 - Brightness & contrast control by histogram transformation
 - Gamma correction
 - Histogram equalization algorithm
+- See `pixel_operations.ipynb`
 
 # 11 Convolution - Mask Operation
 - Linear algebra: dot product or inner product
@@ -197,7 +200,9 @@ $$
 - Spatial gradient: Sobel operator, mag & direction
 - Canny edge detector
 - Gabor filter & Fractalius effect
-- 
+- See `pixel_operations.ipynb`
+
+
 # 12 Morphological Operation
 - Structuring element to choose operation window
 - Min & Max operation
@@ -207,6 +212,8 @@ $$
 - 2D Perspective transformation and pin-hole camera effect
 - $3\times3$ Homography matrix
 - Planar transformation in 3D perspective
+
+- Try example files in `./Homography`
 
 ## DIY Project: Stitching two images having a common planar view
 
