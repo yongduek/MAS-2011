@@ -208,6 +208,8 @@ $$
 - Min & Max operation
 - Dilation & erosion
 - Closing & opening
+
+
 # 13. 2D Projective Transformation
 - 2D Perspective transformation and pin-hole camera effect
 - $3\times3$ Homography matrix
