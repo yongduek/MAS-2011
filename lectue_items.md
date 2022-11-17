@@ -259,3 +259,9 @@ $$
     - https://github.com/patrickloeber/snake-ai-pytorch 
 
 1. pygame + RL: https://github.com/mehulgupta2016154/Traffic_Turbo 
+
+
+## Try
+1. pygame projects: https://www.pygame.org/tags/all 
+1. https://kadable.itch.io/project-trunk 
+    - download, play and appreciate those images of pygame sprites.
