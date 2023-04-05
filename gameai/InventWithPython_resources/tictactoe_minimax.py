@@ -169,7 +169,7 @@ def getPlayerMiniMaxMove(board, letters):
             makeMove(boardCopy, playerLetter, i)
             score = minimax(boardCopy, 0, False, letters)
             if score > bestScore:
-                bestScore = score 
+                bestScore = score
                 bestMove = i
     #
     return bestMove
