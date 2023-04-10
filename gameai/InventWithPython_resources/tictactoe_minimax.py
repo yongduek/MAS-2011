@@ -143,7 +143,7 @@ def minimax(board, depth, isMaximizer, letters):
                 makeMove(board_copy, playerLetter, i)
                 score = minimax(board_copy, depth-1, False, letters)
                 if score > best_score:
-                    best_score = score 
+                    best_score = score
         #
         return best_score
     else: # minimizer == computer

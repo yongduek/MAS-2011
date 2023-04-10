@@ -72,6 +72,7 @@ class Game(object):
     # Sprite lists
     block_list = None
     all_sprites_list = None
+    bullet_list = None 
     player = None
 
     # Other data
@@ -162,7 +163,7 @@ def main():
     size = [SCREEN_WIDTH, SCREEN_HEIGHT]
     screen = pygame.display.set_mode(size)
 
-    pygame.display.set_caption("My Game")
+    pygame.display.set_caption("2022ㅌㅌㅌㅌ   서용덕")
     pygame.mouse.set_visible(False)
 
     # Create our objects and set the data

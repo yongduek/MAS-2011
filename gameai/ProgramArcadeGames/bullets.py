@@ -54,14 +54,20 @@ class Player(pygame.sprite.Sprite):
 
 class Bullet(pygame.sprite.Sprite):
     """ This class represents the bullet . """
-    def __init__(self):
+    def __init__(self, player_rect, color=None):
         # Call the parent class (Sprite) constructor
         super().__init__()
 
         self.image = pygame.Surface([4, 10])
-        self.image.fill(BLACK)
+        if color is None:
+            self.image.fill(BLACK)
+        else:
+            self.image.fill(color)
 
         self.rect = self.image.get_rect()
+
+        self.rect.x = player_rect.x + player_rect.width//2 # going up
+        self.rect.y = player_rect.y
 
     def update(self):
         """ Move the bullet. """
@@ -125,10 +131,10 @@ while not done:
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
             # Fire a bullet if the user clicks the mouse button
-            bullet = Bullet()
+            bullet = Bullet(player.rect, (255, 100, 100))
             # Set the bullet so it is where the player is
-            bullet.rect.x = player.rect.x
-            bullet.rect.y = player.rect.y
+            # bullet.rect.x = player.rect.x + player.rect.width//2 # going up
+            # bullet.rect.y = player.rect.y
             # Add the bullet to the lists
             all_sprites_list.add(bullet)
             bullet_list.add(bullet)
@@ -139,23 +145,35 @@ while not done:
     all_sprites_list.update()
 
     # Calculate mechanics for each bullet
-    for bullet in bullet_list:
+    # for bullet in bullet_list:
 
-        # See if it hit a block
-        block_hit_list = pygame.sprite.spritecollide(bullet, block_list, True)
+    #     # See if it hit a block
+    #     block_hit_list = pygame.sprite.spritecollide(bullet, block_list, True)
 
-        # For each block hit, remove the bullet and add to the score
-        for block in block_hit_list:
-            bullet_list.remove(bullet)
-            all_sprites_list.remove(bullet)
+    #     # For each block hit, remove the bullet and add to the score
+    #     for block in block_hit_list:
+    #         bullet_list.remove(bullet)
+    #         all_sprites_list.remove(bullet)
+    #         score += 1
+    #         print(score)
+
+    #     # Remove the bullet if it flies up off the screen
+    #     if bullet.rect.y < -10:
+    #         bullet_list.remove(bullet)
+    #         all_sprites_list.remove(bullet)
+
+    coll = pygame.sprite.groupcollide(bullet_list, block_list, True, True)
+
+    for (k, v) in coll.items():
+        for m in v:
             score += 1
-            print(score)
-
-        # Remove the bullet if it flies up off the screen
-        if bullet.rect.y < -10:
-            bullet_list.remove(bullet)
-            all_sprites_list.remove(bullet)
-
+                
+    # print(coll)
+    # for b in coll.keys():
+    #     for m in coll[b]:
+    #         score += 1 
+    print("score: ", score)
+    
     # --- Draw a frame
 
     # Clear the screen
