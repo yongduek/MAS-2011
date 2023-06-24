@@ -145,9 +145,15 @@ Video Files
 - learning by doing
 
 ### Pygame Resources
-1. [game development with Pygame by kidscancode.org](https://www.youtube.com/playlist?list=PLsk-HSGFjnaH5yghzu7PcOzm9NhsW0Urw)
-1. [sprite sheet tutorial: load, parse, and use](https://youtu.be/ePiMYe7JpJo)
-
+1. [Kidscancode.org: Game development with Pygame](https://www.youtube.com/playlist?list=PLsk-HSGFjnaH5yghzu7PcOzm9NhsW0Urw)
+2. [Youtube tutorials by CDcodes](https://www.youtube.com/@CDcodes/videos)
+    1. [Sprite sheet tutorial: load, parse, and use](https://youtu.be/ePiMYe7JpJo)
+1. [Book: Programming Arcade Games with Python and Pygame](http://programarcadegames.com/)
+2. [Arcade Academy - Learn Python](https://learn.arcade.academy/en/latest/)
+    1. [The Python Arcade Library](https://api.arcade.academy/en/latest/)
+    4. [Tutorial: Build a platform game in python with arcade (realpython.com)](https://realpython.com/platformer-python-arcade/#:~:text=Install%20the%20Python%20arcade%20library%20Create%20a%20basic,joystick%20input%20Play%20sound%20effects%20for%20game%20actions)
+        1. concise and good.
+        2. a list of resources and apps for pygame and arcade.
 
 ---
 ## Reinfocement Learning
